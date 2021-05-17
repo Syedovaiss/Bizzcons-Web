@@ -1,0 +1,60 @@
+<%- include('commons/admin/head.ejs') %>
+    <%- include('commons/admin/nav.ejs') %>
+        <%- include('commons/admin/sidebar.ejs') %>
+
+            <div class="main-content">
+                <section class="section">
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="card">
+                                <div class="card-header">
+                                    <h4>All Services</h4>
+
+                                </div>
+                                <div class="card-body p-0">
+                                    <div class="table-responsive">
+                                        <table class="table table-striped">
+                                            <tr>
+                                                <th class="text-center">
+
+                                                </th>
+                                                <th>Service Title</th>
+                                                <th>Service Category</th>
+                                                <th>Service Description</th>
+                                                <th>Details</th>
+                                            </tr>
+                                            <tr>
+                                                <% if(services) { %>
+                                                    <% for(var i=0; i < services.length; i++) { %>
+                                                        <td class="p-0 text-center">
+
+                                                        </td>
+
+                                                        <td class="align-middle" style="width: 500px;">
+                                                            <%= services[i].service_title %>
+                                                        </td>
+                                                        <td class="align-middle" style="width: 500px;">
+                                                            <%= services[i].service_type %>
+                                                        </td>
+                                                        <td>
+                                                            <marquee>
+                                                                <%= services[i].service_description %>
+                                                            </marquee>
+                                                        </td>
+
+                                                        <td><a href="/admin/service/<%= services[i].service_id %>" class="btn btn-outline-primary">Details</a></td>
+
+                                            </tr>
+                                            <% } %>
+                                                <% } %>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+
+
+            <%- include('commons/admin/end.ejs') %>

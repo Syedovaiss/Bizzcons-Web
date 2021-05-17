@@ -1,0 +1,93 @@
+<%- include('commons/admin/head.ejs') %>
+    <%- include('commons/admin/nav.ejs') %>
+        <%- include('commons/admin/sidebar.ejs') %>
+
+            <%= project.project_image %>
+
+                <div class="main-content">
+                    <% if(project) { %>
+                        <section class="section">
+                            <div class="container">
+                                <div class="row">
+                                    <div class="container">
+                                        <div class="text-center">
+                                            <div class="text-center element-animate text-dark">
+                                                <h1>
+                                                    <%= project.project_title %>
+                                                </h1>
+                                            </div>
+                                        </div>
+                                        <br>
+                                        <div class="text-center element-animate">
+                                            <div class="media d-block media-custom ">
+
+
+                                                <div id="carouselExampleSlidesOnly" class="carousel slide "
+                                                    data-ride="carousel" data-interval="3000">
+                                                    <div class="carousel-inner">
+
+
+                                                        <% for(var image=0; image < projectImages.length ; image++) { %>
+                                                            <% if(image==0){ %>
+                                                                <div class="carousel-item item active">
+                                                                    <img src="<%= projectImages[image] %>"
+                                                                        alt="Slide">
+                                                                </div>
+                                                                <%} else { %>
+                                                                    <div class="carousel-item item ">
+                                                                        <img src="<%= projectImages[image] %>"
+                                                                            alt="Slide">
+                                                                    </div>
+
+                                                                    <% } %>
+
+                                                                        <% } %>
+                                                    </div>
+                                                </div>
+
+
+                                                <div class="media-body">
+                                                    <div>
+                                                        <br>
+                                                    </div>
+                                                    <div class="element-animate text-dark">
+                                                        <h1>
+                                                            Project Description
+                                                        </h1>
+                                                        <p class="text-center element-animate">
+                                                            <%= project.project_description %>
+                                                        </p>
+                                                    </div>
+
+
+
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+
+                        <% } %>
+                </div>
+
+                <style>
+                    .carousel .carousel-item {
+                        width: 500px !important;
+                        height: 600px !important;
+                        min-height: 600px !important; 
+                        min-width: 500px !important; 
+                    }
+
+                    .carousel-item img {
+                        position: absolute;
+                        object-fit:fill;
+                        top: 0;
+                        left: 0; 
+                        min-height: 600px !important; 
+                        min-width: 500px !important; 
+                    }
+                </style>
+                <%- include('commons/admin/end.ejs') %>

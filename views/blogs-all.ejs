@@ -1,0 +1,63 @@
+<%- include('commons/admin/head.ejs') %>
+<%- include('commons/admin/nav.ejs') %>
+<%- include('commons/admin/sidebar.ejs') %>
+
+<style>
+  .appendEllipsis {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 200px;
+  }
+</style>
+
+<div class="main-content">
+    <section class="section">
+<div class="row">
+    <div class="col-12">
+      <div class="card">
+        <div class="card-header">
+          <h4>All Blogs</h4>
+          
+        </div>
+        <div class="card-body p-0">
+          <div class="table-responsive">
+            <table class="table table-striped">
+              <tr>
+                <th class="text-center">
+                  
+                </th>
+                <th>Blog Title</th>
+                <th >Blog Sub Title</th>
+                <th>Blog Description</th>
+                <th>Details</th>
+                <th>Delete</th>
+              </tr>
+              <tr> 
+                  <% if(blogs) { %>
+                <% for(var i=0; i < blogs.length; i++) { %>
+                <td class="p-0 text-center">
+                  
+                </td>
+       
+                <td class="appendEllipsis">  <%= blogs[i].blog_title %> </td>
+                <td class="appendEllipsis">  <%= blogs[i].blog_sub_title %> </td>
+                <td class="appendEllipsis"> <%= blogs[i].blog_description %></td>
+                <td><a href="/blogs/all/<%= blogs[i].blog_id %>" class="btn btn-outline-primary">Detail</a></td>
+                <td><a href="/blogs/delete/<%= blogs[i].blog_id %>" class="btn btn-outline-danger">Delete</a></td>
+                
+              </tr>
+              <% } %>
+              <% } %>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  </section>
+  </div>
+  
+
+  <%- include('commons/admin/end.ejs') %>
+  

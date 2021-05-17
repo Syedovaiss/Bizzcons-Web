@@ -1,0 +1,78 @@
+<%- include('commons/user/head.ejs') %>
+  <%- include('commons/user/nav.ejs') %>
+
+
+    <section class="section">
+      <div class="container">
+        <!--  -->
+        <!-- <div class="row mb-5"> -->
+
+          
+
+
+          <!--  -->
+          <style>
+            .carousel .carousel-item {
+              width: 500px !important;
+              height: 600px !important;
+              min-height: 600px !important;
+              min-width: 500px !important;
+            }
+      
+            .carousel-item img {
+              position: absolute;
+              object-fit: fill;
+              top: 0;
+              left: 0;
+              min-height: 600px !important;
+              min-width: 500px !important;
+            }
+          </style>
+      
+
+          <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel" data-interval="3000">
+
+          <div class="carousel-inner">
+
+              <% for(var image=0; image < projectImages.length ; image++) { %>
+                <% console.log(projectImages[image]) %>
+                  <% if(image==0){ %>
+                      <div class="carousel-item active">
+                          <img src="<%= projectImages[image] %>"   alt="Slide">
+                      </div>
+                      <%} else { %>
+                          <div class="carousel-item item ">
+                              <img src="<%= projectImages[image] %>"  alt="Slide">
+                          </div>
+
+                          <% } %>
+
+                              <% } %>
+          </div>
+      </div>
+
+        <div class="row mt-5 ">
+          <div class="col-lg-6 mx-auto">
+            <h2 class="text-uppercase heading mb-4 text-center">
+              <%= project.project_title %>
+            </h2>
+          </div>
+        </div>
+
+
+        <div class="row mb-5 mr-3 ml-3">
+
+          <p>
+            <%= project.project_description %>
+          </p>
+
+        </div>
+
+
+      </div>
+
+      </div>
+    </section>
+    <!-- END section -->
+
+    <%- include('commons/user/end.ejs') %>

@@ -1,0 +1,92 @@
+<%- include('commons/user/head.ejs') %>
+  <%- include('commons/user/nav.ejs') %>
+
+    <section class="inner-page">
+      <div class="slider-item py-5" style="background-image: url('img/img_06.jpg');">
+
+        <div class="container">
+          <div class="row slider-text align-items-center justify-content-center text-center">
+            <div class="col-md-7 col-sm-12 element-animate">
+              <h1 class="text-white">Projects</h1>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+
+      <section class="section">
+        <div class="container">
+          <% if(projects && projects.length> 0){ %>
+
+            <div class="row no-gutters">
+              <% for(var i=0; i< projects.length; i++) { %>
+                  <div class="col-md-4 element-animate">
+
+                    <a href="/projects/<%= projects[i].project_id %>" class="link-thumbnail">
+                      <h3>
+                        <%= projects[i].project_title %>
+                      </h3>
+                      <span class="ion-plus icon"></span>
+                      <img src="<%= images[i]%>" alt="Image placeholder" class="img-fluid">
+                    </a>
+                  </div>
+
+                  <% } %>
+
+
+                    <% } else { %>
+                      <div class="row no-gutters">
+                        <div class="col-md-4 element-animate">
+                          <a href="img/work_thumb_3.jpg" class="link-thumbnail">
+                            <h3>General Construction Building</h3>
+                            <span class="ion-plus icon"></span>
+                            <img src="img/work_thumb_2.jpg" alt="Image placeholder" class="img-fluid">
+                          </a>
+                        </div>
+                        <div class="col-md-4 element-animate">
+                          <a href="img/work_thumb_3.jpg" class="link-thumbnail">
+                            <h3>House Renovation</h3>
+                            <span class="ion-plus icon"></span>
+                            <img src="img/work_thumb_3.jpg" alt="Image placeholder" class="img-fluid">
+                          </a>
+                        </div>
+
+                        <div class="col-md-4 element-animate">
+                          <a href="img/work_thumb_1.jpg" class="link-thumbnail">
+                            <h3>Wood Polishing</h3>
+                            <span class="ion-plus icon"></span>
+                            <img src="img/work_thumb_1.jpg" alt="Image placeholder" class="img-fluid">
+                          </a>
+                        </div>
+                        <div class="col-md-4 element-animate">
+                          <a href="img/work_thumb_2.jpg" class="link-thumbnail">
+                            <h3>General Construction Building</h3>
+                            <span class="ion-plus icon"></span>
+                            <img src="img/work_thumb_2.jpg" alt="Image placeholder" class="img-fluid">
+                          </a>
+                        </div>
+                        <div class="col-md-4 element-animate">
+                          <a href="img/work_thumb_3.jpg" class="link-thumbnail">
+                            <h3>House Renovation</h3>
+                            <span class="ion-plus icon"></span>
+                            <img src="img/work_thumb_3.jpg" alt="Image placeholder" class="img-fluid">
+                          </a>
+                        </div>
+                        <div class="col-md-4 element-animate">
+                          <a href="img/work_thumb_2.jpg" class="link-thumbnail">
+                            <h3>General Construction Building</h3>
+                            <span class="ion-plus icon"></span>
+                            <img src="img/work_thumb_2.jpg" alt="Image placeholder" class="img-fluid">
+                          </a>
+                        </div>
+
+                        <% } %>
+
+                      </div>
+            </div>
+      </section>
+
+
+
+      <%- include('commons/user/end.ejs') %>

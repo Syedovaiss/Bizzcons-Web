@@ -1,0 +1,38 @@
+<%- include('commons/user/head.ejs') %>
+	<%- include('commons/user/nav.ejs') %>
+
+	
+	<div class="container">
+		<div class="cs-blog-detail mt-5">
+			<h3 class="font-weight-bold mt-3 text-dark"><%= blogs.blog_title%></h3>
+
+			<div class="cs-main-post mt-5">
+				<figure><img onload="pagespeed.CriticalImages.checkImageForCriticality(this);" data-pagespeed-url-hash="2714250504" alt="jobline-blog (8)" src="<%=blogs.blog_header_image%>"></figure>
+			</div>
+			<div class="cs-post-title">
+				
+				<div class="post-option">
+				   
+					<span class="post-date"><a href="#"><i class="cs-color icon-calendar6"></i> <strong>Posted On:</strong>  <%=blogs.updatedAt %></a></span>
+				</div>
+			</div>
+			<div class="cs-post-option-panel">
+				<div class="rich-editor-text">
+					<h5 class="font-weight-bold mt-3 text-capitalize"><%= blogs.blog_sub_title%></h5>
+					<p class="mt-4"><%= blogs.blog_description%></p>
+					
+					
+				</div>
+			</div>
+			<div class="cs-tags">
+				<div class="tags">
+					<span></span>
+					
+				</div>
+			  
+			</div>
+		   
+		</div>
+		</div>
+
+		<%- include('commons/user/end.ejs') %>

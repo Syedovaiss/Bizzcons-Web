@@ -1,0 +1,30 @@
+DB Name => bizzcons_prod
+DB_USER => bizzcons_bizzcons_admin_prod
+PASSWORD => newP@ssw0rd
+
+
+Login Details
+- Username: bizzcons
+- Password: yiS3p801Ix
+Control Panel URL: https://sg17.fcomet.com:2083/
+
+IMPORTANT: Your hosting account password has been randomly generated. You can change your account password here.
+Server Information
+
+Server Name: sg17.fcomet.com
+Server IP: 139.162.4.104
+
+If you are using an existing domain with your new hosting account, you will need to update the nameservers to point to the nameservers listed below.
+
+
+Nameserver 1: ns1.sg17.fcomet.com 
+Nameserver 2: ns2.sg17.fcomet.com
+
+Uploading Your Website
+Temporarily you may use one of the addresses given below to manage your web site:
+Temporary FTP Hostname: sg17.fcomet.com
+Temporary Webpage URL: You can activate it following our guide
+And once your domain has propagated you may use the details below:
+
+FTP Hostname: bizzcons.com
+Webpage URL: http://bizzcons.com

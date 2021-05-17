@@ -1,0 +1,39 @@
+<%- include('commons/admin/head.ejs') %>
+    <%- include('commons/admin/nav.ejs') %>
+        <%- include('commons/admin/sidebar.ejs') %>
+
+            <div class="main-content">
+                <section class="section">
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="row">
+                                <div class="col-12 col-md-6 col-lg-6">
+
+                                    <% if(service) { %>
+                                        <div class="card card-primary">
+                                            <div class="card-header">
+                                                <h4>Service Detail</h4>
+                                                <div class="card-header-action">
+                                                    <a href="#" class="btn btn-primary">
+                                                        <%= service.service_type %>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                            <div class="card-body">
+                                                <h5>Title</h5>
+                                                <p>
+                                                    <%= service.service_title %>
+                                                </p>
+                                                <h5>Description</h5>
+                                                <p>
+                                                    <%= service.service_description %>
+                                                </p>
+                                            </div>
+                                        </div>
+                                        <% } %>
+                                </div>
+                </section>
+            </div>
+
+
+            <%- include('commons/admin/end.ejs') %>

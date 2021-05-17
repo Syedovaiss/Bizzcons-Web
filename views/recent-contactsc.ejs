@@ -1,0 +1,57 @@
+<%- include('commons/admin/head.ejs') %>
+    <%- include('commons/admin/nav.ejs') %>
+        <%- include('commons/admin/sidebar.ejs') %>
+
+            <div class="main-content">
+                <section class="section">
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="card">
+                                <div class="card-header">
+                                    <h4>Recent Contacts</h4>
+
+                                </div>
+                                <div class="card-body p-0">
+                                    <div class="table-responsive">
+                                        <table class="table table-striped">
+                                            <tr>
+                                                <th class="text-center">
+
+                                                </th>
+                                                <th >Fullname</th>
+                                                <th>Email</th>
+                                                <th>Message</th>
+                                            </tr>
+                                            <tr>
+                                                <% if(contact) { %>
+                                                    <% for(var i=0; i < contact.length; i++) { %>
+                                                        <td class="p-0 text-center">
+
+                                                        </td>
+
+                                                        <td class="align-middle" style="width: 200px;">
+                                                            <%= contact[i].first_name %>  <%= contact[i].last_name %> 
+                                                        </td>
+                                                        <td class="align-middle" style="width: 200px;">
+                                                            <%= contact[i].email %>
+                                                        </td>
+                                                        <td>
+                                                            <marquee>
+                                                                <%= contact[i].message %>
+                                                            </marquee>
+                                                        </td>
+
+                                            </tr>
+                                            <% } %>
+                                                <% } %>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+
+
+            <%- include('commons/admin/end.ejs') %>

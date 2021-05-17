@@ -1,0 +1,63 @@
+<%- include('commons/admin/head.ejs') %>
+  <%- include('commons/admin/nav.ejs') %>
+    <%- include('commons/admin/sidebar.ejs') %>
+
+      <div class="main-content">
+        <section class="section">
+          <div class="section-body">
+            <div class="row">
+              <div class="col-12 col-md-6 col-lg-6">
+                <div class="card">
+                  <div class="card-header">
+                    <h4>Add Service</h4>
+                  </div>
+                  <div class="card-body">
+
+                    <form role="form" action="/admin/service/create/new" method="POST">
+
+                      <div class="form-group">
+                        <label>Service Title</label>
+                        <div class="input-group">
+                          <div class="input-group-prepend">
+                            <div class="input-group-text">
+
+                              <i class="fas fa-user-tie"></i>
+                            </div>
+                          </div>
+                          <input id="service_title" name="service_title" type="text" class="form-control currency">
+                        </div>
+                      </div>
+                      <div class="form-group">
+                        <label>Category</label>
+                        <select id="category" name="category" class="form-control form-control-sm">
+                          <option>Construction</option>
+                          <option>Designing</option>
+                          <option>Smart Solutions</option>
+                        </select>
+                        </div>
+                   
+                      
+                      <div class="form-group">
+                        <label>Service Description</label>
+                        <textarea id="service_desc" name="service_desc" class="form-control"></textarea>
+                      </div>
+                    
+
+                   
+                      <div class="form-group">
+                        <div class="card-footer text-right">
+                          <button class="btn btn-primary mr-1" type="submit">Add</button>
+                        </div>
+                      </div>
+
+                    </form>
+                  </div>
+
+                </div>
+              </div>
+            </div>
+          </div>
+
+      </div>
+
+      <%- include('commons/admin/end.ejs') %>

@@ -1,0 +1,295 @@
+<!-- Main Content -->
+
+<%- include('commons/admin/head.ejs') %>
+  <%- include('commons/admin/nav.ejs') %>
+    <%- include('commons/admin/sidebar.ejs') %>
+
+    <style>
+      .appendEllipsis {
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        max-width: 200px;
+      }
+    </style>
+    
+
+      <div class="main-content">
+        <section class="section">
+          <div class="row ">
+            <div class="col-xl-3 col-lg-6 col-md-6 col-sm-6 col-xs-12">
+              <div class="card">
+                <div class="card-statistic-4">
+                  <div class="align-items-center justify-content-between">
+                    <div class="row ">
+                      <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 pr-0 pt-3">
+                        <div class="card-content">
+                          
+                          <h5 class="font-15">Quotations</h5>
+                          <% if(count) { %>
+                            <h2 class="mb-3 font-18"><%= count[0] %></h2>
+                            <% } else { %>
+                          <h2 class="mb-3 font-18">0</h2>
+                          <% } %>
+
+                        </div>
+                      </div>
+                      <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 pl-0">
+                        <div class="banner-img">
+                          <img src="../assets/img/banner/1.png" alt="">
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-xl-3 col-lg-6 col-md-6 col-sm-6 col-xs-12">
+              <div class="card">
+                <div class="card-statistic-4">
+                  <div class="align-items-center justify-content-between">
+                    <div class="row ">
+                      <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 pr-0 pt-3">
+                        <div class="card-content">
+                          <h5 class="font-15"> Admins</h5>
+                          <% if(count) { %>
+                            <h2 class="mb-3 font-18"><%= count[1] %></h2>
+                            <% } else { %>
+                              <h2 class="mb-3 font-18">0</h2>
+                          <% } %>
+
+                        </div>
+                      </div>
+                      <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 pl-0">
+                        <div class="banner-img">
+                          <img src="../assets/img/banner/2.png" alt="">
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-xl-3 col-lg-6 col-md-6 col-sm-6 col-xs-12">
+              <div class="card">
+                <div class="card-statistic-4">
+                  <div class="align-items-center justify-content-between">
+                    <div class="row ">
+                      <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 pr-0 pt-3">
+                        <div class="card-content">
+                          <h5 class="font-15">Projects</h5>
+                          <% if(count) { %>
+                            <h2 class="mb-3 font-18"><%= count[2] %></h2>
+                            <% } else { %>
+                              <h2 class="mb-3 font-18">0</h2>
+                          <% } %>
+                          
+                        </div>
+                      </div>
+                      <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 pl-0">
+                        <div class="banner-img">
+                          <img src="../assets/img/banner/3.png" alt="">
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-xl-3 col-lg-6 col-md-6 col-sm-6 col-xs-12">
+              <div class="card">
+                <div class="card-statistic-4">
+                  <div class="align-items-center justify-content-between">
+                    <div class="row ">
+                      <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 pr-0 pt-3">
+                        <div class="card-content">
+                          <h5 class="font-15">Users</h5>
+                          <% if(count) { %>
+                            <h2 class="mb-3 font-18"><%= count[3] %></h2>
+                            <% } else { %>
+                              <h2 class="mb-3 font-18">0</h2>
+                          <% } %>
+                        </div>
+                      </div>
+                      <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 pl-0">
+                        <div class="banner-img">
+                          <img src="../assets/img/banner/4.png" alt="">
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+
+          <!-- Quotes -->
+          <div class="row">
+            <div class="col-12">
+              <div class="card">
+                <div class="card-header">
+                  <h4>Recent Quotes</h4>
+                  <div class="card-header-form">
+
+                  </div>
+                </div>
+                <div class="card-body p-0">
+                  <div class="table-responsive">
+                    <table class="table table-striped">
+
+                      <tr>
+
+                        <th> </th>
+                        <th>First Name</th>
+                        <th>Last Name</th>
+                        <th>Email</th>
+                        <th>Phone</th>
+                        <th>About Company</th>
+                        <th>About Project</th>
+                        <th>Date-Time</th>
+                      </tr>
+                      <% if(recentQuotes && recentQuotes.length> 0) { %>
+ 
+                        <% for(var i=0 ; i< recentQuotes.length ; i++) { %>
+                      <tr>
+                        <td></td>
+                      
+
+
+                            <td>
+                              <%= recentQuotes[i].first_name %>
+
+                            </td>
+                            <td>
+                              <%= recentQuotes[i].last_name %>
+                            </td>
+                            <td>
+                              <%= recentQuotes[i].email %>
+                            </td>
+                            
+                            <td><%= recentQuotes[i].phone %></td>
+                            <td class="appendEllipsis"><%= recentQuotes[i].about_company %></td>
+                            <td class="appendEllipsis">
+                              <%= recentQuotes[i].about_project %>
+                            </td>
+                            <td class="appendEllipsis"> <%= recentQuotes[i].createdAt %></td>
+                           
+
+                           
+                      </tr>
+                      <% } %>
+                      <% } %>
+
+                    </table>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- News -->
+
+          <div class="row">
+            <div class="col-12">
+              <div class="card">
+                <div class="card-header">
+                  <h4>Recent News</h4>
+                  <div class="card-header-form">
+
+                  </div>
+                </div>
+                <div class="card-body p-0">
+                  <div class="table-responsive">
+                    <table class="table table-striped">
+
+                      <tr>
+
+                        <th> </th>
+                        <th>News</th>
+                        <th>Date-Time</th>
+                      </tr>
+                      <% if(recentNews && recentNews.length> 0) { %>
+ 
+                        <% for(var i=0 ; i< recentNews.length ; i++) { %>
+                      <tr>
+                        <td></td>
+                   
+
+                            <td class="appendEllipsis">
+                              <%= recentNews[i].news_title %>
+
+                            </td>
+                           
+                            <td class="appendEllipsis"> <%= recentNews[i].createdAt %></td>
+                           
+
+                           
+                      </tr>
+                      <% } %>
+                      <% } %>
+
+                    </table>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Recent Blogs -->
+          <div class="row">
+            <div class="col-12">
+              <div class="card">
+                <div class="card-header">
+                  <h4>Recent Blogs</h4>
+                  <div class="card-header-form">
+
+                  </div>
+                </div>
+                <div class="card-body p-0">
+                  <div class="table-responsive">
+                    <table class="table table-striped">
+
+                      <tr>
+
+                        <th> </th>
+                        <th>Blog Title</th>
+                        <th>Blog Description</th>
+                    
+                        <th>Created At</th>
+                      </tr>
+                      <% if(recentBlogs && recentBlogs.length> 0) { %>
+ 
+                        <% for(var i=0 ; i< recentBlogs.length ; i++) { %>
+                      <tr>
+                        <td></td>
+                      
+
+
+                            <td class="appendEllipsis">
+                              <%= recentBlogs[i].blog_title %>
+
+                            </td>
+                            <td class="appendEllipsis">
+                              <%= recentBlogs[i].blog_description %>
+                            </td>
+                           
+                            <td class="appendEllipsis"> <%= recentBlogs[i].createdAt %></td>
+                           
+
+                           
+                      </tr>
+                      <% } %>
+                      <% } %>
+
+                    </table>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </section>
+
+      </div>
+      <%- include('commons/admin/end.ejs') %>

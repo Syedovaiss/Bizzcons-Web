@@ -1,0 +1,50 @@
+<%- include('commons/admin/head.ejs') %>
+    <%- include('commons/admin/nav.ejs') %>
+        <%- include('commons/admin/sidebar.ejs') %>
+
+            <div class="main-content">
+                <section class="section">
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="row">
+
+                                <% if(projects && projects.length> 0) { %>
+                                    <% for(var i=0; i < projects.length; i++) { %>
+
+                                        <div class="col-12 col-sm-6 col-md-6 col-lg-3">
+                                            <article class="article">
+                                                <div class="article-header">
+                                                        <div class="article-image" data-background="<%= images[i]%>">
+                                                        
+                                                         <img src="<%= images[i]%>">
+                                                        </div>
+                                                        <div class="article-title">
+
+                                                        </div>
+                                                </div>
+                                                <div class="article-details">
+                                                    <strong>
+                                                        <p>
+                                                            <%= projects[i].project_title %>.
+                                                        </p>
+                                                    </strong>
+                                                    <div class="article-cta">
+                                                        <a href="/admin/projects/<%= projects[i].project_id %>"
+                                                            class="btn btn-primary">Read More</a>
+                                                    </div>
+                                                    <div class="article-cta" style="margin-top: 10px;">
+                                                        <a href="/admin/projects/delete/<%= projects[i].project_id %>"
+                                                            class="btn btn-danger">Delete</a>
+                                                    </div>
+                                                </div>
+                                            </article>
+                                        </div>
+                                        <% } %>
+                                            <% } %>
+                            </div>
+
+                </section>
+            </div>
+
+
+            <%- include('commons/admin/end.ejs') %>

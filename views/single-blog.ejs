@@ -1,0 +1,46 @@
+<%- include('commons/admin/head.ejs') %>
+    <%- include('commons/admin/nav.ejs') %>
+        <%- include('commons/admin/sidebar.ejs') %>
+
+
+            <div class="main-content">
+                <% if(blog) { %>
+                    <section class="section">
+                        <div class="container">
+                            <div class="row">
+                                <div class="container">
+                                    <div class="text-center">
+                                        <div class="text-center element-animate">
+                                            <h1>
+                                                <%= blog.blog_title %>
+                                            </h1>
+                                        </div>
+                                    </div>
+                                </div>
+                                <br>
+                                <div class="text-center element-animate">
+                                    <div class="media d-block media-custom ">
+                                        <img src="<%= blog.blog_header_image %>" alt="Image Placeholder"
+                                            class="img-fluid">
+                                        <div class="media-body">
+
+                                            <h3 class="mt-0 text-black"
+                                                style="padding-top: 50px; padding-bottom: 30px;">
+                                                <%= blog.blog_sub_title %>
+                                            </h3>
+                                            <p class="d-flex text-left text-black">
+                                                <%= blog.blog_description %>
+                                            </p>
+
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </section>
+
+                    <% } %>
+            </div>
+
+            <%- include('commons/admin/end.ejs') %>
