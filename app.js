@@ -82,7 +82,7 @@ app.get('*', function(req, res) {
 db.sync().then(data => {
     db.authenticate()
         .then(() => {
-            app.listen()
+            app.listen(process.env.PORT||80)
             console.log("Syncing... " + "https://bizzcons.herokuapp.com")
         })
         .catch(err => {
