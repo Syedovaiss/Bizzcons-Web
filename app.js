@@ -82,8 +82,8 @@ app.get('*', function(req, res) {
 db.sync().then(data => {
     db.authenticate()
         .then(() => {
-            app.listen(process.env.PORT)
-            console.log("Syncing... " + "http://localhost:" + process.env.PORT)
+            app.listen()
+            console.log("Syncing... " + "https://bizzcons.herokuapp.com")
         })
         .catch(err => {
             console.error('Unable to connect to the database:', err);
