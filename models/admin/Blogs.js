@@ -5,8 +5,7 @@ const Blog = db.define('blogs', {
     blog_id: {
         type: Sequelize.INTEGER,
         allowNull: false,
-        primaryKey: true,
-        autoIncrement: true
+        primaryKey: true
 
     },
     blog_title: {

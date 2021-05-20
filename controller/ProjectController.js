@@ -34,11 +34,17 @@ exports.addProject = async (req, res) => {
 
     else {
 
-        for (var i = 0; i < projectImages.length; i++) { 
+        for (var i = 0; i < projectImages.length; i++) {
             imageURLS.push(helper.createFileUrl(projectImages[i]))
-         }
-
+        }
+        var count = 0
+        await Project.count('project_id').then(data => {
+            count = data
+        }).catch(error => {
+            console.log("error: " + error)
+        })
         await Project.create({
+            project_id: count + 1,
             project_title: title,
             project_image: JSON.stringify(imageURLS),
             project_description: projectDetails
@@ -68,7 +74,7 @@ exports.getAllProjects = async (req, res) => {
                 var parsedImages = JSON.parse(data[i].project_image)
                 projectImages.push(parsedImages)
             }
-            var imageArray=[];
+            var imageArray = [];
             imageArray.push(projectImages[0][0])
             imageArray.push(projectImages[0][1])
             imageArray.push(projectImages[0][2])

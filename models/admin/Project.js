@@ -2,11 +2,11 @@ const db = require('../../config/db')
 const Sequelize = require('sequelize')
 
 const Project = db.define('projects', {
+    
     project_id: {
         type: Sequelize.INTEGER,
         allowNull: false,
-        primaryKey: true,
-        autoIncrement: true
+        primaryKey: true
 
     },
     project_title: {

@@ -34,9 +34,14 @@ exports.createNewBlog = async (req, res) => {
         req.flash('error', 'Please upload blog image')
         res.redirect('/admin/create/blog/new')
     } else {
-
-
+        var count = 0
+        await Blog.count('blog_id').then(data => {
+            count = data
+        }).catch(error => {
+            console.log("error: " + error)
+        })
         await Blog.create({
+            blog_id: count + 1,
             blog_title: title,
             blog_header_image: helper.createFileUrl(file),
             blog_description: blogDescription,
