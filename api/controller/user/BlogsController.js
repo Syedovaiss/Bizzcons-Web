@@ -4,7 +4,6 @@ const Sequelize = require('sequelize')
 exports.getBlogs = async (req, res) => {
 
     const page = req.params.page
-
     const limit = 10
 
     const startIndex = (page - 1) * limit
@@ -21,17 +20,20 @@ exports.getBlogs = async (req, res) => {
         }
     }).then(blogs => {
 
+        console.log("page no: " + page)
         res.status(200).json({
             data: blogs,
             success: true,
-            error: ""
+            error: "",
+            nextPageNo: parseInt(page) + 1
         })
 
     }).catch(error => {
         res.status(500).json({
             message: "",
             success: "",
-            error: error
+            error: error,
+            nextPageNo: parseInt(page) + 1
         })
     })
 }

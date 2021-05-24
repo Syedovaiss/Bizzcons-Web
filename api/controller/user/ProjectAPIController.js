@@ -22,14 +22,16 @@ exports.getAllProjects = async (req, res) => {
         res.status(200).json({
             data: project,
             success: true,
-            error: ""
+            error: "",
+            nextPageNo: parseInt(page) + 1
         })
 
     }).catch(error => {
         res.status(500).json({
             message: "",
             success: "",
-            error: error
+            error: error,
+            nextPageNo: parseInt(page) + 1
         })
     })
 }
